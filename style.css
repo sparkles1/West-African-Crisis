@@ -1,0 +1,24 @@
+#nextsteps {
+   color: black;
+}
+
+.emphasized {
+   font-size: 1.2em;
+}
+
+.background { 
+    background-color:lightgreen; 
+}
+
+
+.body {
+ background-color: green;
+
+.img {
+  position: fixed;
+  width: 40%
+  top: 50%;
+  left: 50%;
+}
+
+ 
