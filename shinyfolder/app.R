@@ -101,9 +101,9 @@ ui <- navbarPage("West Africa", id="nav",
                               tabItems(
                                 tabItem(tabName="hil",class ="background",
                                         fluidRow(
-                                          box(HTML('<p>Africa is the second largest continent in the world. Consisting of five regions(Northern, Eastern, Western,Southern and Central). The advent of crisis in the western African region has affected the economy.Serious concerns have been raised on its adverse humanitarian casualities.
-                                                       My anaysis is based on crisis level within the 15 countries in the western african region across the span of 21 years,
-                                                       with the intention of finding out if there is similarity in crisis occurrences in the different months for each of the years. Are there pariticular months in each year with high crisis rates?
+                                          box(HTML('<p>Africa is the second largest continent in the world. Consisting of five regions(Northern, Eastern, Western,Southern and Central).Concerns have been raised on its adverse humanitarian casualities.
+                                                       My anaysis was based on crisis level within the 15 countries in the western african region across the span of 21 years,starting from January 1st 1997 to April 16th 2018. My aim was to find out if 
+                                                       there was similarity in level of crisis occurrences in the different months for each of the years. 
                                                    </p>','<p><img src="http://i.imgur.com/1KU8ovN.png" width =500 heigth =200/></p>')),
                                           box(HTML('<p><img src="http://www.questconnect.org/images/Nth_Africa_west_phy.jpg" width =500 heigth =100/></p>',
                                                    "West Africa Map"))

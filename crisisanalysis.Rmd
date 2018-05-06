@@ -2,13 +2,7 @@
 title: "Analysis of West African Crisis"
 author: "Udochi Maduakor"
 date: "April 24, 2018"
-output:
-  ioslides_presentation:
-    code_folding: hide
-    css: style.css
-    theme: null
-    beamer_presentation: default
-  
+output: word_document
 ---
 
 ```{r echo=FALSE, include=FALSE, cache=FALSE}
