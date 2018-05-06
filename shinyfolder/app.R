@@ -91,7 +91,7 @@ ui <- navbarPage("West Africa", id="nav",
                             dashboardSidebar(
                               sidebarMenu(
                                 menuItem("Introduction",tabName="hil",icon=icon("globe")),
-                                menuSubItem("Crisis Visualization",tabName = "Udochi"),
+                                menuSubItem("Time Series",tabName = "Udochi"),
                                 menuSubItem("Bar Chart", tabName="hilary"),
                                 menuSubItem("Chi-Square Test", tabName="chi-square")
                               )
@@ -101,7 +101,9 @@ ui <- navbarPage("West Africa", id="nav",
                               tabItems(
                                 tabItem(tabName="hil",class ="background",
                                         fluidRow(
-                                          box(HTML('<p>Africa is the second largest continent in the world. Consisting of 5 regions(Northern, Eastern, Western,Southern and Central). The advent of crisis in the western African region has affectes the economy of the region.Serious concerns have been raised on its adverse humanitarian casualities.My anaysis is based on crisis level within the 15 countries in the western african region across the span of 21 years,with the intention of finding out if there is similarity in crisis occurrences in the different months for each of the years. Are there pariticular months in each year with high crisis rates?
+                                          box(HTML('<p>Africa is the second largest continent in the world. Consisting of five regions(Northern, Eastern, Western,Southern and Central). The advent of crisis in the western African region has affected the economy.Serious concerns have been raised on its adverse humanitarian casualities.
+                                                       My anaysis is based on crisis level within the 15 countries in the western african region across the span of 21 years,
+                                                       with the intention of finding out if there is similarity in crisis occurrences in the different months for each of the years. Are there pariticular months in each year with high crisis rates?
                                                    </p>','<p><img src="http://i.imgur.com/1KU8ovN.png" width =500 heigth =200/></p>')),
                                           box(HTML('<p><img src="http://www.questconnect.org/images/Nth_Africa_west_phy.jpg" width =500 heigth =100/></p>',
                                                    "West Africa Map"))
@@ -128,7 +130,8 @@ ui <- navbarPage("West Africa", id="nav",
                                           box(plotOutput("Plot4",height=300,width=300)),
                                           box("As part of the analysis, I wanted to compare the crisis occurrence relationship between each month
                                               across the different years.My intention was to know if there existed a relationship or 
-                                              if each month was independent across the years"),
+                                              if each month was independent across the years,so i adopted the chi-square test"),
+                                          withMathJax(),
                                           box("Chi-Square Test:",br(),"Monthly crisis occurence across each year",br(),
                                               "X-squared = 0.025329",br(),
                                               "df = 11",br(),

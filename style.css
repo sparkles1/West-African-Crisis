@@ -12,7 +12,9 @@
 
 
 .body {
- background-color: green;
+ font-size: 19px;
+ color: DarkBlue;
+}
 
 .img {
   position: fixed;
@@ -21,4 +23,8 @@
   left: 50%;
 }
 
+h2 {
+    font-size: 30px;
+    color: DarkBlue;
+}
  
