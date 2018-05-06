@@ -2,7 +2,13 @@
 title: "Analysis of West African Crisis"
 author: "Udochi Maduakor"
 date: "April 24, 2018"
-output: word_document
+output:
+  ioslides_presentation:
+    code_folding: hide
+    css: style.css
+    theme: null
+    beamer_presentation: default
+  
 ---
 
 ```{r echo=FALSE, include=FALSE, cache=FALSE}
@@ -94,4 +100,5 @@ To do this, the chi-square test was used.Based on the resulting p-value,i cannot
 
 ##**References**{.body}  
 -*Annan, Nancy. "Violent Conflicts and Civil Strife in West Africa: Causes, Challenges and Prospects." Stability: International Journal of Security and Development, 28 Jan. 2014, www.stabilityjournal.org/articles/10.5334/sta.da/.*  
+
 -*Data source was from acled data*

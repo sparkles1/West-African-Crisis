@@ -114,8 +114,10 @@ ui <- navbarPage("West Africa", id="nav",
                                           box(selectInput("country","Choose Country",
                                                           choices = countrylist, selected = "Nigeria")),
                                           
-                                          box("The Time series above give a detailed trend of the crisis in the 
-                                              different west african countries within the span of 21 years,")
+                                          box("The Time series above gives a detailed trend of the crisis in the 
+                                              different west african countries within the span of 21 years,from 1997 to 2018.
+                                              There was significant drop in crisis occurrences in most of the countries. However,
+                                              some countries still have recent crisis occurreneces.E.g Nigeria.")
                                           )),
                                 
                                 tabItem(tabName = "hilary",
@@ -123,7 +125,8 @@ ui <- navbarPage("West Africa", id="nav",
                                           box(plotOutput("plot3",height=300,width = 300)),
                                           box(selectInput("country3","Choose Country",
                                                           choices = countrylist, selected = "Nigeria")),
-                                          box("The Barplots also represent the crisis trend within these countries in West african in 21 years")
+                                          box("The Barplots also represent the crisis trend within these countries in West african in 21 years,from 1997 to 2018.
+                                              Still, we can see significant drop in crisis rate in some countries and also a recent spike in some others.")
                                         )),
                                 tabItem(tabName ="chi-square",
                                         fluidRow(
