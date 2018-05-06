@@ -67,8 +67,8 @@ ui <- navbarPage("West Africa", id="nav",
                           column(3,
                                  selectInput(inputId = "country2",
                                              label="country:",
-                                             choices = c("All",unique(as.character(
-                                               w5$COUNTRY))),selected = "All"
+                                             choices = c(unique(as.character(
+                                               w5$COUNTRY))),selected = "Nigeria"
                                  )),
                           fluidRow(
                             column(3,offset = 0.5,
