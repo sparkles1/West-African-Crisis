@@ -124,7 +124,7 @@ ui <- navbarPage("West Africa", id="nav",
                                 
                                 tabItem(tabName = "hilary",
                                         fluidRow(
-                                          box(plotOutput("plot3",height=300,width = 300)),
+                                          box(plotOutput("plot3")),
                                           box(selectInput("country3","Choose Country",
                                                           choices = countrylist, selected = "Nigeria")),
                                           box("The Barplots also represent the crisis trend within these countries in West african in 21 years,from 1997 to 2018.
@@ -234,8 +234,8 @@ server <- function(input, output,session) {
       data <- BENbar
     if (input$country3 == "Mali")
       data <- MALbar
-    ggplot(data=data, aes(y=number, x=EVENT_DATE)) +
-      geom_bar(colour="blue", stat="identity")
+    ggplot(data=data, aes(y=number, x=YEAR),color="blue") +
+      geom_bar(colour="black",position="dodge",stat="identity",fill = "#0000CC")
   })
   
   output$Plot4 <- renderPlot({
