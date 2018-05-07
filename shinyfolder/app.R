@@ -4,6 +4,8 @@ library(readxl)
 library(DT)
 library(shinydashboard)
 library(ggfortify)
+library(callr)
+library(zoo)
 
 wa1 <- read_csv("wa1.csv") %>%select("COUNTRY","EVENT_DATE","number")
 countrylist <- wa1$COUNTRY %>% unique()
@@ -101,9 +103,9 @@ ui <- navbarPage("West Africa", id="nav",
                               tabItems(
                                 tabItem(tabName="hil",class ="background",
                                         fluidRow(
-                                          box(HTML('<p>Africa is the second largest continent in the world. Consisting of five regions(Northern, Eastern, Western,Southern and Central).Concerns have been raised on its adverse humanitarian casualities.
-                                                       My anaysis was based on crisis level within the 15 countries in the western african region across the span of 21 years,starting from January 1st 1997 to April 16th 2018. My aim was to find out if 
-                                                       there was similarity in level of crisis occurrences in the different months for each of the years. 
+                                          box(HTML('<p>Africa is the second largest continent in the world consisting of five regions(Northern, Eastern, Western,Southern and Central). Concerns have been raised on its adverse humanitarian casualities caused by several crisis situations in the region.</p>', 
+                                                       '<p>My anaysis was based on crisis level within 15 countries(Nigeria,Sierra Leone,Niger,Liberia,Guinea,Ivory Coast,Mauritania,Guinea-Bissau,Burkina Faso,Gambia,Ghana,Togo,Benin,Mali) in the western african region across the span of 21 years,starting from January 1st 1997 to April 16th 2018. My aim was to find out if 
+                                                       the crisis level had a seasonal(monthly) trend across the years. 
                                                    </p>','<p><img src="http://i.imgur.com/1KU8ovN.png" width =500 heigth =200/></p>')),
                                           box(HTML('<p><img src="http://www.questconnect.org/images/Nth_Africa_west_phy.jpg" width =500 heigth =100/></p>',
                                                    "West Africa Map"))
@@ -117,7 +119,7 @@ ui <- navbarPage("West Africa", id="nav",
                                           box("The Time series above gives a detailed trend of the crisis in the 
                                               different west african countries within the span of 21 years,from 1997 to 2018.
                                               There was significant drop in crisis occurrences in most of the countries. However,
-                                              some countries still have recent crisis occurreneces.E.g Nigeria.")
+                                              some countries still have recent crisis occurreneces.")
                                           )),
                                 
                                 tabItem(tabName = "hilary",
@@ -134,14 +136,14 @@ ui <- navbarPage("West Africa", id="nav",
                                           box("As part of the analysis, I wanted to compare the crisis occurrence relationship between each month
                                               across the different years.My intention was to know if there existed a relationship or 
                                               if each month was independent across the years,so i adopted the chi-square test"),
-                                          withMathJax(),
-                                          box("Chi-Square Test:",br(),"Monthly crisis occurence across each year",br(),
+                                          box(tags$b("Monthly crisis occurence across each year"),br(),
+                                              tags$b("Chi-Square Test:"),br(),
                                               "X-squared = 0.025329",br(),
                                               "df = 11",br(),
                                               "p-value = 1"),
-                                          box("Conclusion:",br(),
-                                              "The crisis rate in the western african region has existed since 1997, though the occurence in most countries has significantly dropped.In some other areas, there have been recent occurences(Nigeria).This can be clearly seen from the different graphical representations of the crisis trend across 21 years.The Basis of my analysis was to compare the occurences within months across the different years, to know if the rate of occurrence is relational to the month(season). To do this, the chi-square test was used.Based on the resulting p-value i cannot statistically conclude that this relationship exists.",br(), 
-                                               "However,pertinent contributory factors to these conflicts include poverty, human rights violations, bad governance and corruption, ethnic marginalization and small arms proliferation.")
+                                          box(tags$b("Conclusion:"),br(),
+                                              "The crisis rate in the western african region has existed since 1997, though the occurence in most countries has significantly dropped.In some other areas, there have been recent occurences(Nigeria).This can be clearly seen from the different graphical representations of the crisis trend across 21 years.The Basis of my analysis was to compare the occurences within months across the different years, to know if the rate of occurrence is relational to the month(season). To do this, the chi-square test was used.Based on the resulting p-value,I cannot statistically conclude that this relationship exists.",br(), 
+                                               "However,there are other pertinent contributory factors to these conflicts/crisis happenings.Some include poverty, human rights violations, bad governance and corruption, ethnic marginalization and small arms proliferation.")
                                           )))
                                 ))))
 
